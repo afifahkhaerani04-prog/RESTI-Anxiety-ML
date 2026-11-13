@@ -1,0 +1,112 @@
+{
+  "model": "M1-Random Forest",
+  "n": 510,
+  "method": "SHAP TreeExplainer",
+  "target_class": "GAD-7 >=10",
+  "model_sha256": "b8cb99798f7682536fb41bafef08a825ad54dec0320d136fe32857f3019bfd1e",
+  "dataset_sha256": "9090d9ad53245da881b99caf8ea715989f10fd883dd2aa1b15d52610c5b84586",
+  "qc": {
+    "initial_responses": 514,
+    "excluded_repeated_submissions": 4,
+    "final_n": 510,
+    "negative_n": 393,
+    "positive_n": 117,
+    "age_min": 12,
+    "age_max": 64,
+    "missing_values": 0,
+    "excluded_source_row_indices_zero_based": [
+      97,
+      98,
+      208,
+      267
+    ]
+  },
+  "global_feature_importance": [
+    {
+      "rank": 1,
+      "feature": "Functional impairment",
+      "mean_abs_shap": 0.16454841983244026
+    },
+    {
+      "rank": 2,
+      "feature": "Age",
+      "mean_abs_shap": 0.1096426082719148
+    },
+    {
+      "rank": 3,
+      "feature": "Education=SMA/Sederajat",
+      "mean_abs_shap": 0.048512081188210585
+    },
+    {
+      "rank": 4,
+      "feature": "Previous anxiety diagnosis",
+      "mean_abs_shap": 0.029703940996783706
+    },
+    {
+      "rank": 5,
+      "feature": "Sex=Perempuan",
+      "mean_abs_shap": 0.025503919550397037
+    },
+    {
+      "rank": 6,
+      "feature": "Employment=Pelajar/Mahasiswa",
+      "mean_abs_shap": 0.02490893724770357
+    },
+    {
+      "rank": 7,
+      "feature": "Education=SMP/Sederajat",
+      "mean_abs_shap": 0.020532298899172144
+    },
+    {
+      "rank": 8,
+      "feature": "Sex=Laki-Laki",
+      "mean_abs_shap": 0.017609535205108506
+    },
+    {
+      "rank": 9,
+      "feature": "Education=Sarjana",
+      "mean_abs_shap": 0.014857952151672411
+    },
+    {
+      "rank": 10,
+      "feature": "Employment=Pekerja",
+      "mean_abs_shap": 0.007921165309144688
+    },
+    {
+      "rank": 11,
+      "feature": "Employment=Lainnya",
+      "mean_abs_shap": 0.004988473855464816
+    },
+    {
+      "rank": 12,
+      "feature": "Education=Diploma",
+      "mean_abs_shap": 0.004917552608530165
+    },
+    {
+      "rank": 13,
+      "feature": "Employment=Ibu Rumah Tangga",
+      "mean_abs_shap": 0.0034552083379365433
+    },
+    {
+      "rank": 14,
+      "feature": "Education=Pascasarjana",
+      "mean_abs_shap": 0.0027005136908559574
+    },
+    {
+      "rank": 15,
+      "feature": "Employment=Tidak Bekerja",
+      "mean_abs_shap": 0.00012783959135720415
+    },
+    {
+      "rank": 16,
+      "feature": "Employment=Pensiunan",
+      "mean_abs_shap": 6.851496510786376e-05
+    },
+    {
+      "rank": 17,
+      "feature": "Education=SD/Sederajat",
+      "mean_abs_shap": 2.68263033655546e-05
+    }
+  ],
+  "interpretation_constraint": "SHAP values quantify predictive attribution within this fitted model and must not be interpreted as causal effects."
+}

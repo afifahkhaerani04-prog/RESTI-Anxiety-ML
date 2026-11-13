@@ -1,0 +1,95 @@
+{
+  "status": "LOCKED",
+  "lock_date": "2026-10-19",
+  "selected_predictor_configuration": "M1",
+  "selected_algorithm": "Random Forest",
+  "selected_configuration": "M1-RF",
+  "selection_principle": "Predefined multi-criterion selection based on discrimination, calibration, stability, interpretability, parsimony, and implementation feasibility; not AUROC alone.",
+  "internal_validation_performance": {
+    "AUROC": 0.9105173876166242,
+    "AUPRC": 0.7736969065290831,
+    "Sensitivity": 0.7521367521367521,
+    "Specificity": 0.8982188295165394,
+    "Precision": 0.6875,
+    "F1": 0.7183673469387755,
+    "BalancedAccuracy": 0.8251777908266458,
+    "Brier": 0.09919884866061825,
+    "CalibrationIntercept": -0.6335479823201678,
+    "CalibrationSlope": 0.8727591534356394
+  },
+  "incremental_value_M1_minus_M0_RF": {
+    "DeltaAUROC": 0.06603814619081794,
+    "DeltaAUROC_95CI": [0.03859474304097023, 0.09584147784897944],
+    "DeltaAUPRC": 0.15921145779004742,
+    "DeltaAUPRC_95CI": [0.09844951015273024, 0.21096208367169203],
+    "DeltaBrier": -0.047030795211583,
+    "DeltaBrier_95CI": [-0.05987888362055056, -0.03425569439665738]
+  },
+  "paired_M1_model_comparisons": {
+    "XGBoost_minus_RF": {
+      "DeltaAUROC": 0.006089471738326857,
+      "DeltaAUROC_95CI": [-0.006354539447664109, 0.018430691957518258],
+      "DeltaAUPRC": 0.022249524073119642,
+      "DeltaAUPRC_95CI": [-0.011022168883914853, 0.05636860280016598],
+      "DeltaBrier": 0.008164630231379089,
+      "DeltaBrier_95CI": [-0.00021370966857204953, 0.016461063990070204]
+    },
+    "RF_minus_LR": {
+      "DeltaAUROC": 0.003457950022835332,
+      "DeltaAUROC_95CI": [-0.015081760806689534, 0.02278639722346621],
+      "DeltaAUPRC": 0.024984393601859223,
+      "DeltaAUPRC_95CI": [-0.037871337071202174, 0.08688531384648077],
+      "DeltaBrier": -0.023507550469529417,
+      "DeltaBrier_95CI": [-0.03680163559085988, -0.010233958268730277]
+    },
+    "RF_minus_SVM": {
+      "DeltaAUROC": 0.008851482133924948,
+      "DeltaAUROC_95CI": [-0.009096363883351938, 0.02784983732636729],
+      "DeltaAUPRC": 0.04014377572497063,
+      "DeltaAUPRC_95CI": [-0.010594213408258585, 0.08873613088378425],
+      "DeltaBrier": -0.0031710007802774054,
+      "DeltaBrier_95CI": [-0.013988402586207184, 0.00733568988318582]
+    }
+  },
+  "selection_rationale": [
+    "M1 improved AUROC, AUPRC, and Brier score over M0 for all four algorithms with paired 95% bootstrap confidence intervals excluding the null.",
+    "XGBoost achieved the highest AUROC and AUPRC, but its paired discrimination gains over RF were small and the 95% confidence intervals included zero.",
+    "RF achieved the lowest Brier score among M1 models while maintaining strong discrimination, clinically relevant sensitivity, high specificity, and straightforward SHAP-based interpretation and deployment.",
+    "RF was therefore selected as the best overall trade-off under the prespecified multi-criterion rule, not as a claim of universal statistical superiority over all alternatives."
+  ],
+  "final_refit": {
+    "training_n": 510,
+    "parameters": {
+      "n_estimators": 200,
+      "max_depth": 10,
+      "min_samples_split": 2,
+      "min_samples_leaf": 2,
+      "max_features": "sqrt",
+      "class_weight": "balanced",
+      "random_state": 42
+    },
+    "full_data_inner_cv_mean_AUROC": 0.9187579966508144,
+    "note": "This full-data inner-CV value is a tuning/refit diagnostic and must not be reported as the generalization performance estimate. Primary performance estimates are from outer cross-validation."
+  },
+  "explainability": {
+    "method": "SHAP TreeExplainer on the full-data refitted M1-RF model",
+    "top_global_features": [
+      ["Functional impairment", 0.16454841983244026],
+      ["Age", 0.1096426082719148],
+      ["Education=SMA/Sederajat", 0.048512081188210585],
+      ["Previous anxiety diagnosis", 0.029703940996783706],
+      ["Sex=Perempuan", 0.025503919550397037],
+      ["Employment=Pelajar/Mahasiswa", 0.02490893724770357]
+    ],
+    "interpretation_constraint": "SHAP values describe predictive attribution and must not be interpreted causally."
+  },
+  "calibration_caution": "The selected RF had calibration intercept -0.6335 and slope 0.8728. Raw predicted probabilities should therefore not be presented as externally validated absolute clinical risk. External validation and, if appropriate, recalibration are required before clinical use.",
+  "artifacts": {
+    "model_joblib": "final_rf_m1_pipeline.joblib",
+    "model_joblib_sha256": "2a4cd502efcc6ff7d9778ba86c915e4f80f4a37ba6de381785aa8ff866668a7b",
+    "shap_json": "final_rf_m1_shap.json",
+    "shap_json_sha256": "520f84936e9d389d26f3e76e1bdb8e68ae64ddcad431bb6cc9959e0ba8130981",
+    "shap_figure": "shap_global_rf_m1.png",
+    "shap_figure_sha256": "5b8c34789d24a5ce95c160041a7494d921d29a33a451e494d0458aac5d407c91"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "json": "artifacts/reproduced/final_rf_m1_shap.json",
+  "figure": "artifacts/reproduced/shap_global_rf_m1.png",
+  "top_features": [
+    {
+      "rank": 1,
+      "feature": "Functional impairment",
+      "mean_abs_shap": 0.16454841983244026
+    },
+    {
+      "rank": 2,
+      "feature": "Age",
+      "mean_abs_shap": 0.1096426082719148
+    },
+    {
+      "rank": 3,
+      "feature": "Education=SMA/Sederajat",
+      "mean_abs_shap": 0.048512081188210585
+    },
+    {
+      "rank": 4,
+      "feature": "Previous anxiety diagnosis",
+      "mean_abs_shap": 0.029703940996783706
+    },
+    {
+      "rank": 5,
+      "feature": "Sex=Perempuan",
+      "mean_abs_shap": 0.025503919550397037
+    },
+    {
+      "rank": 6,
+      "feature": "Employment=Pelajar/Mahasiswa",
+      "mean_abs_shap": 0.02490893724770357
+    },
+    {
+      "rank": 7,
+      "feature": "Education=SMP/Sederajat",
+      "mean_abs_shap": 0.020532298899172144
+    },
+    {
+      "rank": 8,
+      "feature": "Sex=Laki-Laki",
+      "mean_abs_shap": 0.017609535205108506
+    },
+    {
+      "rank": 9,
+      "feature": "Education=Sarjana",
+      "mean_abs_shap": 0.014857952151672411
+    },
+    {
+      "rank": 10,
+      "feature": "Employment=Pekerja",
+      "mean_abs_shap": 0.007921165309144688
+    }
+  ],
+  "model_sha256": "b8cb99798f7682536fb41bafef08a825ad54dec0320d136fe32857f3019bfd1e",
+  "shap_json_sha256": "ceff0e8d0c0981925fe704ac3694ae9f91e9f195a968f3485f1b6332a919abd3",
+  "figure_sha256": "637fc96ec66400078cb7995c8b7dc83fec0d1a5004e56303006f1f295b89f91b",
+  "artifact_origin": "Reproduced SHAP outputs, not the originally locked SHAP binary artifacts."
+}

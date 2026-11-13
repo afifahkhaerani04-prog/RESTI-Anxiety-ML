@@ -1,0 +1,54 @@
+{
+  "model": "M1-Random Forest",
+  "training_n": 510,
+  "class_counts": {
+    "negative": 393,
+    "positive": 117
+  },
+  "predictors": [
+    "age",
+    "sex",
+    "education",
+    "employment",
+    "previous_anxiety_diagnosis",
+    "functional_impairment"
+  ],
+  "parameters": {
+    "n_estimators": 200,
+    "max_depth": 10,
+    "min_samples_split": 2,
+    "min_samples_leaf": 2,
+    "max_features": "sqrt",
+    "class_weight": "balanced",
+    "random_state": 42,
+    "n_jobs": -1
+  },
+  "random_seed": 42,
+  "dataset_sha256": "9090d9ad53245da881b99caf8ea715989f10fd883dd2aa1b15d52610c5b84586",
+  "model_sha256": "b8cb99798f7682536fb41bafef08a825ad54dec0320d136fe32857f3019bfd1e",
+  "qc": {
+    "initial_responses": 514,
+    "excluded_repeated_submissions": 4,
+    "final_n": 510,
+    "negative_n": 393,
+    "positive_n": 117,
+    "age_min": 12,
+    "age_max": 64,
+    "missing_values": 0,
+    "excluded_source_row_indices_zero_based": [
+      97,
+      98,
+      208,
+      267
+    ]
+  },
+  "verification": null,
+  "software": {
+    "python": "3.13.5",
+    "pandas": "2.2.3",
+    "numpy": "2.3.5",
+    "scikit-learn": "1.8.0",
+    "joblib": "1.5.3"
+  },
+  "important_note": "Full-data refit is for final artifact generation. Predictive performance must be reported from the locked outer nested cross-validation, not from training/refit performance."
+}

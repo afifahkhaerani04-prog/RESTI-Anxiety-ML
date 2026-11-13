@@ -1,0 +1,12 @@
+variable,role,type,encoding_or_definition,public_repository_status
+age,predictor_M0_M1,continuous,"numeric age; 12-64 years in final cohort",schema_only
+sex,predictor_M0_M1,nominal,"one-hot encoding",schema_only
+education,predictor_M0_M1,nominal,"one-hot encoding; 6 categories",schema_only
+employment,predictor_M0_M1,nominal,"one-hot encoding; 6 categories",schema_only
+previous_anxiety_diagnosis,predictor_M0_M1,binary,"0=no; 1=yes",schema_only
+functional_impairment,predictor_M1,ordinal,"0=not difficult; 1=somewhat difficult; 2=very difficult; 3=extremely disruptive",schema_only
+GAD7_total,outcome_source,integer,"sum of seven GAD-7 items; range 0-21",not_public_by_default
+outcome,target,binary,"0=GAD-7 <10; 1=GAD-7 >=10",not_public_by_default
+email,QC_only,direct_identifier,"used only for duplicate screening; excluded from modeling",never_public
+timestamp,QC_only,administrative,"excluded from modeling",never_public
+consent,eligibility,administrative,"excluded from modeling",never_public

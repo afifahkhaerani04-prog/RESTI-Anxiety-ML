@@ -1,0 +1,11 @@
+{
+  "selected_configuration": "M1-RF",
+  "selected_algorithm": "Random Forest",
+  "selection_basis": [
+    "M1 showed consistent incremental predictive value over M0 across all four algorithms.",
+    "XGBoost had numerically higher AUROC/AUPRC, but paired 95% CIs for its discrimination differences versus RF included zero.",
+    "RF had the lowest Brier score among M1 models.",
+    "RF provided a strong balance of discrimination, calibration, stability, interpretability, and parsimony."
+  ],
+  "important_constraint": "This is a documented multi-criterion selection decision, not a claim that RF is statistically superior to every alternative on every metric."
+}
